@@ -1,0 +1,7 @@
+my_string = input('Какие новости на сегодня? ')
+print('ну надо же,', my_string.upper(), ',да ладно?')
+my_string_1 = input('а еще что интересного? ')
+print('во дела,', my_string_1.lower(), ',капец новости конечно...')
+print(my_string.replace(' ',''))
+print(my_string[0])
+print(my_string[-1])
