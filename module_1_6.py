@@ -1,4 +1,5 @@
 # Словари
+from time import sleep
 my_dict = {'Valera' : '100 рублей',
            'Egor' : '250 рублей',
            'Andrey' : '320 рублей',
@@ -8,9 +9,10 @@ print(my_dict['Valera'])
 print(my_dict.get('Anna'))
 my_dict.update({'Alex' : '319 рублей',
                 'Daniil' : '229 рублей'})
+a = my_dict.pop('Andrey')
 print(my_dict)
-del my_dict['Gena']
-print(my_dict)
+print(a)
+sleep(2)
 #
 # Множества
 my_set = {16,29,'Valera',17,45,14,16,29,17,'Valera'}
