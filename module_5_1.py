@@ -6,6 +6,8 @@ class House:
     def go_to(self, new_floor):
         if new_floor < 1 or new_floor > (self.number_of_floors):
             print(f'В {self.name} Такого этажа не существует')
+        elif new_floor == (self.number_of_floors):
+            print(f'Вас приветствует {self.name}, Ваш выбранный этаж:, {int(new_floor)} из {self.number_of_floors}')
         else:
             print(f'Вас приветствует {self.name}, Ваш выбранный этаж:, {int(new_floor)} из {self.number_of_floors}')
 
@@ -14,4 +16,4 @@ h2 = House('Домик в деревне', 2)
 h3 = House('ЖК Город 4212', 9)
 h1.go_to(5)
 h2.go_to(10)
-h3.go_to(11)
+h3.go_to(9)
