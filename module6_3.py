@@ -14,18 +14,16 @@ class Animal():
             self._cords[2] += dz * self.speed
 
     def get_cords(self):
-        print(self._cords[0] * self.speed)
-        print(self._cords[1] * self.speed)
-        print(self._cords[2] * self.speed)
+        print(f'X:{self._cords[0]}, Y:{self._cords[1]}, Z:{self._cords[2]}')
 
     def attack(self):
-        if Animal._DEGREE_OF_DANGER < 5:
+        if self._DEGREE_OF_DANGER < 5:
             print("Sorry, i'm peaceful :)")
-        elif Animal._DEGREE_OF_DANGER >= 5:
+        else:
             print("Be careful, i'm attacking you 0_0")
 
     def speak(self):
-        print(Animal.sound)
+        print(self.sound)
 
 class Bird(Animal):
     beak = True
@@ -33,15 +31,15 @@ class Bird(Animal):
         print(f'Here are 2 eggs for you')
 
 class AquaticAnimal(Animal):
-    Animal._DEGREE_OF_DANGER = 3
+    _DEGREE_OF_DANGER = 3
     def dive_in(self, dz):
         self._cords[2] -= abs(dz)*(self.speed//2)
 
 class PoisonousAnimal(Animal):
-    Animal._DEGREE_OF_DANGER = 8
+    _DEGREE_OF_DANGER = 8
 
 class Duckbill(Bird, AquaticAnimal, PoisonousAnimal):
-    Animal.sound = "Click-click-click"
+    sound = "Click-click-click"
 
 db = Duckbill(10)
 print(db.live)
@@ -50,4 +48,5 @@ db.speak()
 db.attack()
 db.move(1, 2, 3)
 db.get_cords()
+db.dive_in(6)
 db.lay_eggs()
