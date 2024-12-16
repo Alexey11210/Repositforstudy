@@ -13,9 +13,9 @@ class Shop:
     __file_name = 'products.txt'
     def get_products(self):
         file = open(self.__file_name, 'r')
-        pprint(file.read())
+        prod_str = file.read()
         file.close()
-        return self.__file_name
+        return prod_str
 
     def add(self, *products):
         current_products = self.get_products()
